@@ -1,0 +1,40 @@
+.cartWrapper{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-align: left;
+}
+
+
+.cartItemLi{
+    padding-bottom: 1px;
+}
+
+.packs{
+    width:auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cartItems{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.totalPrice{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.packQuantity{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.packPrice{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}

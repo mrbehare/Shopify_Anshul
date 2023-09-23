@@ -1,0 +1,19 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+padding: 10px;
+justify-content: center;
+
+
+}
+.wrapper>h2{
+    text-align: center;
+}
+
+.CardContent{
+    display: flex;
+    justify-content:space-between;
+    font-family: cursive;
+    padding: 2px
+}
+

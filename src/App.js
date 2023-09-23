@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Chocolates from './Components/Chocolates/Chocolates';
+import Grid from '@mui/material/Grid';
+import CustomCart from './Components/CustomCart/CustomCart';
 
 function App() {
+
+  const [selectedItems,setSelectedItems]=useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+<div>
+<Grid container spacing={2}>
+<Grid item xs={8}>
+<Chocolates selectedItems={selectedItems} setSelectedItems={setSelectedItems}/>
+</Grid>
+<Grid item xs={4}>
+<CustomCart selectedItems={selectedItems} setSelectedItems={setSelectedItems}/>
+</Grid>
+
+</Grid>
+</div>
   );
 }
 
