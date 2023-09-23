@@ -43,6 +43,8 @@ const CustomCart = ({ selectedItems, setSelectedItems }) => {
     }, 2000);
   };
 
+ 
+
   useEffect(() => {
     updateTotalPrice(selectedItems);
   }, [selectedItems]);
@@ -104,13 +106,13 @@ const CustomCart = ({ selectedItems, setSelectedItems }) => {
         )}
       </div>
       {selectedItems.length === 8 && packQuantity > 0 ? (<> 
-        <Button variant="contained"  onClick={checkout}>
+        <Button variant="contained"  onClick={checkout} styles={{fontFamily:"cursive"}}>
           
           Checkout
         </Button>
         </>
-      ) : (
-        <></>
+      ) : ( 
+        <> </>
       )}
     </div>
   );
