@@ -30,6 +30,7 @@ const CustomCart = ({ selectedItems, setSelectedItems }) => {
     setPackQuantity(packQuantity - 1);
   };
 
+  //to get the current scroll opsition//
   const scrollPosition = window.scrollY;
 
   const { enqueueSnackbar } = useSnackbar();
