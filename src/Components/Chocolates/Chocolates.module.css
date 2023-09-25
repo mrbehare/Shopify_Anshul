@@ -13,7 +13,12 @@ justify-content: center;
 .CardContent{
     display: flex;
     justify-content:space-between;
-    font-family: cursive;
+    font-family: cursive!important;
     padding: 2px
 }
 
+.Typography{
+   
+    font-family: cursive!important;
+  
+}

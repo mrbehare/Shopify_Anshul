@@ -11,6 +11,9 @@ import Grid from "@mui/material/Grid";
 import { useSnackbar } from "notistack";
 
 const Chocolates = ({ selectedItems, setSelectedItems }) => {
+  
+  //using useSnackbar to show the warning and success messages
+
   const { enqueueSnackbar } = useSnackbar();
 
   const selectChocolate = (chocolate) => {
@@ -25,12 +28,15 @@ const Chocolates = ({ selectedItems, setSelectedItems }) => {
     }
   };
 
+  //function  to remove the chocolate from selectedItems 
   const removeChocolate = (selectedItem) => {
     let filterData = selectedItems.filter(
       (item) => item.id !== selectedItem.id
     );
     setSelectedItems(filterData);
   };
+
+
 
   const img =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTlCnozm26NmMV1wCJJdWJ65IXif7pYzL5fQ&usqp=CAU";
@@ -40,6 +46,9 @@ const Chocolates = ({ selectedItems, setSelectedItems }) => {
       <h2 >Please Select the Chocolates</h2>
       <div className={styles.cardWrapper}>
         <Grid container spacing={2}>
+
+        {/* maping the data into card */}
+
           {data.map((ele) => {
             return (
               <Grid item md={4}>
@@ -51,14 +60,16 @@ const Chocolates = ({ selectedItems, setSelectedItems }) => {
                     image={img}
                   />
                   <CardContent className={styles.CardContent}>
-                    <Typography gutterBottom variant="h5" >
+                    <Typography gutterBottom variant="h5" className={styles.Typography} >
                       {ele.name}
                     </Typography>
-                    <Typography variant="h5" >
+                    <Typography variant="h5" className={styles.Typography} >
                       ${ele.price} 
                     </Typography>
                   </CardContent>
                   <CardActions>
+
+                  
                     {!selectedItems.includes(ele) ? (
                       <Button
                         variant="contained"
@@ -66,8 +77,11 @@ const Chocolates = ({ selectedItems, setSelectedItems }) => {
                       >
                         Add
                       </Button>
-                    ) : (
-                      <Button
+                    ) :  
+                     
+                    //  this button will only appears when we add the chocolate to selectedItems//
+                      (
+                       <Button
                         variant="contained"
                         onClick={() => removeChocolate(ele)}
                       >
